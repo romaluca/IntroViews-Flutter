@@ -45,14 +45,14 @@ class Page extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         Flexible(
-          flex: 1,
+          flex: 2,
           child: new _TitlePageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
           ),
         ), //Transform
         Expanded(
-          flex: 4,
+          flex: 3,
           child: new _ImagePageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
@@ -186,10 +186,9 @@ class _TitlePageTransform extends StatelessWidget {
       //Used for vertical transformation
       transform:
           new Matrix4.translationValues(0.0, 30.0 * (1 - percentVisible), 0.0),
-      child: new Padding(
+      child: new Container(
+        alignment: Alignment.center,
         padding: new EdgeInsets.only(
-          top: 5.0,
-          bottom: 30.0,
           left: 10.0,
           right: 10.0,
         ),
